@@ -340,7 +340,8 @@ function Set-TargetResource
         -Platform MicrosoftTeams
 
     $team = Get-TargetResource @PSBoundParameters
-
+    
+    $PSBoundParameters.Add('Ensure',$Ensure)
     $CurrentParameters = $PSBoundParameters
     $CurrentParameters.Remove("GlobalAdminAccount")
     $CurrentParameters.Remove("Ensure")
